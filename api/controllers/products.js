@@ -21,7 +21,7 @@ exports.productsGetAll = (req, res, next) => {
 					_id: docs._id, 
 					request: {
 						type: 'GET',
-						url: "http://localhost:3000/products/" + docs._id
+						url: "https://limitless-earth-51432.herokuapp.com/products/" + docs._id
 					}
 				}
 			})
@@ -76,7 +76,7 @@ exports.GETRequstForProductsInACategory = (req, res, next) => {
 							_id: individualResult._id,
 							request: {
 								type: "GET",
-								url: "http://localhost:3000/products/" + individualResult._id,
+								url: "https://limitless-earth-51432.herokuapp.com/products/" + individualResult._id,
 							},
 						};
 					}),
@@ -123,7 +123,7 @@ exports.PostRequestForProducts = (req, res, next) => {
 					_id: result._id,
 					request: {
 						type: "GET",
-						url: "http://localhost:3000/products/" + result._id,
+						url: "https://limitless-earth-51432.herokuapp.com/products/" + result._id,
 					},
 				});
 				res.status(200).json({
@@ -135,7 +135,7 @@ exports.PostRequestForProducts = (req, res, next) => {
 					_id: result._id,
 					request: {
 						type: "GET",
-						url: "http://localhost:3000/products/" + result._id,
+						url: "https://limitless-earth-51432.herokuapp.com/products/" + result._id,
 					},
 				});
 			})

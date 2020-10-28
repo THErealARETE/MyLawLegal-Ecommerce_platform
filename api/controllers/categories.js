@@ -18,7 +18,7 @@ exports.GETRequestForAllCategories = (req,res,next) => {
 								_id: docs._id,
 								request: {
 									type: "GET",
-									url: "http://localhost:3000/categories/" + docs._id,
+									url: "https://limitless-earth-51432.herokuapp.com/categories/" + docs._id,
 								},
 							};
 						}),
@@ -70,7 +70,7 @@ exports.POSTRequestForNewCategory = (req, res, next) => {
 				_id: newCategory._id,
 				request: {
 					type: "GET",
-					url: "http://localhost:3000/categories/" + newCategory._id,
+					url: "https://limitless-earth-51432.herokuapp.com/categories/" + newCategory._id,
 				},
 			});
 			res.status(200).json({
