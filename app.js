@@ -9,12 +9,15 @@ require("dotenv").config();
 // require the new routes
 const categoriesRoute = require('./api/routes/categories')
 const productsRoute = require('./api/routes/products')
+const adminRoute = require('./api/routes/admin')
 const userRoute = require('./api/routes/user')
 
 //define the route links
 const apiCategories = '/categories'
 const apiProducts = '/products'
+const apiAdmin = '/admin'
 const apiUser = '/user'
+const apiDefault = '/'
 
 // morgan for seeing call to route
 app.use(morgan('dev'))
@@ -52,9 +55,16 @@ app.use((req, res, next) => {
 //use both the links and the routes in the app
 app.use(apiCategories ,categoriesRoute)
 app.use(apiProducts , productsRoute)
-app.use(apiUser , userRoute)
+app.use(apiAdmin , adminRoute)
+app.use(apiUser,userRoute )
 
-
+// home page
+app.use("/", (req, res, next) => {
+	res.status(200).json({
+        message1 :"Welcome to MyLawLegal ECommerce Assesment Project ",
+        message2:   " Some available routes are /products, /categories/ user etc"
+    })
+});
 // error handeling 
 app.use((req,res,next)=>{
     const error = new Error('not found')

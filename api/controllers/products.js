@@ -158,7 +158,9 @@ exports.PatchRequestForProducts = (req, res, next) => {
 		.exec()
 		.then((doc) => {
 			console.log(doc);
-			res.status(200).json(doc);
+			res.status(200).json({
+                message: "update was successful", 
+                doc});
 		})
 		.catch((error) => {
 			console.log(error);
@@ -171,7 +173,9 @@ exports.deleteRequestForProducts = (req, res, next) => {
 	Product.deleteOne({ _id: id })
 		.exec()
 		.then((result) => {
-			res.status(200).json(result);
+			res.status(200).json({
+                message: "successfully deleted product",
+                result});
 		})
 		.catch((error) => {
 			console.log("error on delete request", error);
