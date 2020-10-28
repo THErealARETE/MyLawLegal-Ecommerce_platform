@@ -2,5 +2,4 @@ node_modules
 build
 npm-debug.log
 .env
-nodemon.json
 .DS_Store
